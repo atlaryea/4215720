@@ -75,6 +75,7 @@ body {
 #header{
     display: flex;
     align-items: center;
+    width: 100%;
     justify-content: space-between;
     padding: 20px 80px;
     background: #E3E6F3;
@@ -88,7 +89,8 @@ body {
 #navbar{
     display: flex;
     align-items: center;
-    justify-content: center ;
+    justify-content: center;
+    float: right;
 }
 
 #navbar li{
@@ -120,9 +122,13 @@ body {
     left: 20px;
 }
 
-#mobile{
+.menu-bar{
+    color: #1a1a1a;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
     display: none;
-    align-items: center;
 }
 
 #toppa{
@@ -776,6 +782,43 @@ footer .copyright{
 }
 
 /* Media Query*/
+@media (max-width: 991px){
+    #header{
+        padding: 0 20px;
+    }
+    .menu-bar{
+        display: block;
+    }
+    #navbar{
+        /*display: none;*/
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 50px);
+        top: 50px;
+        left: -100%;
+        transition: 0.5s;
+        display: block;
+        text-align: center;
+    }
+    #navbar .active{
+        left: 0;
+    }
+    #navbar li a{
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    #navbar li{
+        padding: 0px 20px;
+    }
+    #navbar li a:hover,
+    #navbar li a.active{
+    color: #1a1a1a;
+    background-color: #088178;
+    }
+    #navbar li a.active::after, #navbar li a:hover::after{
+        width: 0%;
+    }
+}
 
 @media (max-width:799px){
     .section-p1{
@@ -796,9 +839,6 @@ footer .copyright{
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
         padding: 80px 0 0 10px;
         transition: 0.3s;
-    }
-    #navbar .active{
-        right: 0px; 
     }
     #navbar li{
         margin-bottom: 25px;
