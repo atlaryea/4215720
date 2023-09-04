@@ -24,9 +24,7 @@
                 <li><a href="contact.html">Contact</a></li>
                 <!--<a href="#" id="close"><i class="far fa-times"></i></a>-->
             </ul>
-        </div>
-        <div id="mobile">
-            <i id="bar" class="far fa-outdent"></i>
+            <div class="menu-bar"><i class="far fa-bars"></i></div>
         </div>
     </section>
 
@@ -346,6 +344,13 @@
             2023, CHO Foods
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('menu-bar').click(function(){
+                $('navbar').toggleClass('active')
+            })
+        })
+    </script>
 </body>
 </html>
